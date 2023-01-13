@@ -1,0 +1,16 @@
+version: '3'
+services:
+  schedule-service:
+    container_name: test_ScheduleService
+    image: hp4129889/huihui-project:schedule-service
+    restart: always
+    ports:
+      - "8080:3000"
+    command: bash -c "npm run start:nodemon"
+  middle-service:
+    container_name: test_MiddleService
+    image: hp4129889/huihui-project:middle-service
+    restart: always
+    ports:
+      - "8081:3000"
+    command: bash -c "npm run start:nodemon"
